@@ -22,7 +22,7 @@ int main() {
     printf("|%10s | %10s|\n", "Celsius", "Fahrenheit");
     printf("|%s|\n", delimiter_string);
 
-    for(float fahrenheit = 0.0; fahrenheit <= 300; fahrenheit = fahrenheit + 20) {
+    for (float fahrenheit = 300.0; fahrenheit >= 0.0; fahrenheit = fahrenheit - 20.0) {
         printf("|%10.0f | %10.1f|\n", fahrenheit, fahrenheit_to_celsius(&fahrenheit));
         printf("|%s|\n", delimiter_string);
     }
