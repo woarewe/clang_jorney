@@ -14,7 +14,7 @@ int main() {
 
     fahrenheit = lower;
     while(fahrenheit <= upper) {
-        printf("%d\t%d\n", fahrenheit, fahrenheit_to_celsius(&fahrenheit));
+        printf("%3d %6d\n", fahrenheit, fahrenheit_to_celsius(&fahrenheit));
         fahrenheit += step;
     }
 
