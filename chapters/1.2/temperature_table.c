@@ -16,23 +16,15 @@ char *table_row_delimiter(short row_length) {
 }
 
 int main() {
-    float fahrenheit;
-    int lower, upper, step;
     char *delimiter_string = table_row_delimiter(23);
-
-    lower = 0;
-    upper = 300;
-    step = 20;
 
     printf("|%s|\n", delimiter_string);
     printf("|%10s | %10s|\n", "Celsius", "Fahrenheit");
     printf("|%s|\n", delimiter_string);
 
-    fahrenheit = lower;
-    while(fahrenheit <= upper) {
+    for(float fahrenheit = 0.0; fahrenheit <= 300; fahrenheit = fahrenheit + 20) {
         printf("|%10.0f | %10.1f|\n", fahrenheit, fahrenheit_to_celsius(&fahrenheit));
         printf("|%s|\n", delimiter_string);
-        fahrenheit += step;
     }
 
     free(delimiter_string);
