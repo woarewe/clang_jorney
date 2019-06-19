@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int fahrenheit_to_celsius(int *fahrenheit_pointer) {
-    return 5 * (*fahrenheit_pointer - 32) / 9;
+float fahrenheit_to_celsius(float *fahrenheit_pointer) {
+    return (5.0 / 9.0) * (*fahrenheit_pointer - 32.0);
 }
 
 int main() {
-    int fahrenheit, celsius;
+    float fahrenheit;
     int lower, upper, step;
 
     lower = 0;
@@ -14,7 +14,7 @@ int main() {
 
     fahrenheit = lower;
     while(fahrenheit <= upper) {
-        printf("%3d %6d\n", fahrenheit, fahrenheit_to_celsius(&fahrenheit));
+        printf("%3.0f %6.1f\n", fahrenheit, fahrenheit_to_celsius(&fahrenheit));
         fahrenheit += step;
     }
 
