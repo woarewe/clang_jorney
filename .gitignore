@@ -1,3 +1,6 @@
 # Ignore compilation files
 **/*.o
 **/*.out
+
+# Ignore tmp files
+tmp/
