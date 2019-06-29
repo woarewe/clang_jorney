@@ -21,3 +21,4 @@ loader = Zeitwerk::Loader.new
 loader.inflector = inflector_class.new
 ZEITWERK_DIRS.each { |dir| loader.push_dir(dir) }
 loader.setup
+loader.eager_load

@@ -9,14 +9,14 @@ GEM
       concurrent-ruby (~> 1.0)
       transproc (~> 1.0)
     transproc (1.0.3)
-    zeitwerk (2.1.6)
+    zeitwerk (2.1.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   hanami-cli (~> 0.3.1)
-  zeitwerk (~> 2.1.6)
+  zeitwerk (~> 2.1.8)
 
 RUBY VERSION
    ruby 2.6.3p62
