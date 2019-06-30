@@ -16,6 +16,7 @@ module CLI
         else
           %x{gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path}}
         end
+        FileUtils.rm(bin_program_path, force: true)
         puts output
       end
     end
