@@ -7,10 +7,16 @@ module CLI
 
       option :chapter
       option :program_name
+      option :input_stream
 
-      def call(chapter:, program_name:)
+      def call(chapter:, program_name:, input_stream: nil)
         @params = { chapter: chapter, program_name: program_name }
-        puts %x{gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path}}
+        output = if input_stream
+          %x{gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path} < #{input_stream}}
+        else
+          %x{gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path}}
+        end
+        puts output
       end
     end
   end
