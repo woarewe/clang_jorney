@@ -3,6 +3,8 @@
 module CLI
   module Program
     class Template < Hanami::CLI::Command
+      include Programmable
+
       C_FILE_TEMPLATE = <<~C_LANG
       #include <stdio.h>
       #include <stdlib.h>
@@ -14,11 +16,11 @@ module CLI
       C_LANG
 
       option :chapter
-      option :file_name
+      option :program_name
 
-      def call(chapter:, file_name:)
-        file_path = File.join(Dir.pwd, 'chapters', "chapter_#{chapter}", "#{file_name}.c")
-        File.open(file_path, 'w') { |file| file << C_FILE_TEMPLATE }
+      def call(chapter:, program_name:)
+        @params = { chapter: chapter, program_name: program_name }
+        File.open(program_path, 'w') { |file| file << C_FILE_TEMPLATE }
       end
     end
   end
