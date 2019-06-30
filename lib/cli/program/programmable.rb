@@ -9,6 +9,10 @@ module CLI
         File.join(Dir.pwd, 'chapters', "chapter_#{chapter}", "#{program_name}.c")
       end
 
+      def bin_program_path
+        File.join(Dir.pwd, 'tmp', program_name)
+      end
+
       private
 
       def chapter

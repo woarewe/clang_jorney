@@ -4,4 +4,6 @@
 require_relative '../config/boot'
 
 CLI::Commands.register('template', CLI::Program::Template)
+CLI::Commands.register('run', CLI::Program::Run)
+
 Hanami::CLI.new(CLI::Commands).call
