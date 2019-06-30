@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module CLI
-  module Template
-    class Create < Hanami::CLI::Command
+  module Program
+    class Template < Hanami::CLI::Command
       C_FILE_TEMPLATE = <<~C_LANG
       #include <stdio.h>
       #include <stdlib.h>
