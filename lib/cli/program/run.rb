@@ -11,11 +11,12 @@ module CLI
 
       def call(chapter:, program_name:, input_stream: nil)
         @params = { chapter: chapter, program_name: program_name }
-        output = if input_stream
-          %x{gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path} < #{input_stream}}
-        else
-          %x{gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path}}
-        end
+        output =
+          if input_stream
+            `gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path} < #{input_stream}`
+          else
+            `gcc #{program_path} -Wall -pedantic -o #{bin_program_path} && #{bin_program_path}`
+          end
         FileUtils.rm(bin_program_path, force: true)
         puts output
       end

@@ -6,12 +6,12 @@ module CLI
       include Programmable
 
       C_FILE_TEMPLATE = <<~C_LANG
-      #include <stdio.h>
-      #include <stdlib.h>
+        #include <stdio.h>
+        #include <stdlib.h>
 
-      int main() {
-          return 0;
-      }
+         int main() {
+            return 0;
+        }
       C_LANG
 
       option :chapter
