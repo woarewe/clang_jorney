@@ -6,7 +6,8 @@ module CLI
       attr_reader :params
 
       def program_path
-        File.join(Dir.pwd, 'chapters', "chapter_#{chapter}", "#{program_name}.c")
+        FileUtils.mkdir(chapters_dir_path) unless Dir.exist?(chapters_dir_path)
+        File.join(chapters_dir_path, "#{program_name}.c")
       end
 
       def bin_program_path
@@ -17,6 +18,10 @@ module CLI
 
       def chapter
         params.fetch(:chapter)
+      end
+
+      def chapters_dir_path
+        File.join(Dir.pwd, 'chapters', "chapter_#{chapter}")
       end
 
       def program_name
